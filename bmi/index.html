@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+        <title>BMI</title>
+        
+        <meta charset="utf-8"></meta>
+        <style>
+       
+*{
+  box-sizing: border-box;
+}            
+body {
+    background-color:#567;
+}
+
+input{
+    width:90%;
+    height:200px;
+    margin-left:5%;
+    padding:20px;
+    font-size: 40px;
+    border-radius:25px;
+    padding-left: 60px;
+}
+#height{
+  margin-top: 20vh;
+}
+#weight{
+  margin-top: 5vh;
+}
+button{
+    width:60%;
+    height: 190px;
+    padding:10px;
+    margin-top:5vh;
+    font-size:40px;
+    border-radius:20px;
+    margin-bottom:5vh;
+    margin-left: 20%;
+}
+
+
+
+table{
+    width:98%;
+    margin-left:1%;
+    margin-top: 5vh;
+    background-color:#A2C279;
+    border:3px solid black;
+    border-radius:15px;
+    font-size: 35px;
+    padding: 25px;
+}
+
+
+
+
+        </style>
+        
+    </head>
+    <body>
+    
+    
+    <input type="number" id="height" placeholder="Height (meter)">
+    <input type="number" id="weight" placeholder="Weight (k.g)">
+    
+    <button onclick="bmi()" class="a">BMI</button>
+
+    <br/>
+    <hr/>
+    <br/>
+    
+    <table>
+        <tr>
+            <td><b>Status</b></td>
+            <td><b>BMI</b></td>
+        </tr>
+        
+        <tr class="bad">
+            <td>UnderWeight</td>
+            <td>Less than 18</td>
+        </tr>
+        
+        
+        <tr class="good">
+            <td>Normal</td>
+            <td>Between 18 and 25</td>
+        </tr>
+        
+        
+        <tr class="bad">
+            <td>Overweight</td>
+            <td>Between 25 and 30</td>
+        </tr>
+        
+        <tr class="veryBad">
+            <td>Obese</td>
+            <td>Greater than 30</td>
+        </tr>
+        
+        
+    </table>
+        
+    </body>
+    <script>
+        var height = 0;
+var weight = 0;
+        
+            
+
+function bmi(){
+    
+    height = document.getElementById("height").value;
+    weight = document.getElementById("weight").value;
+    
+    //bmi
+    var bmi = weight / (height ** 2 );
+    
+    // Choosing message
+    var msg ="";
+    if(bmi < 18){
+        msg = "You are Underweight"
+    }
+    else if(bmi >=18 &&  bmi < 25){
+        msg = "Normal,Keep it up all the time  ";
+    }
+    else if(bmi >= 26 && bmi < 30){
+        msg = "You are Overweight, do exercise"
+    }
+    else if(bmi >=30){
+        msg = "Obese, do exercise"
+    }
+    
+    // outputs message
+    alert("BMI: " + bmi + " \n " + msg);
+}
+
+    </script>
+
+</html>
